@@ -78,11 +78,9 @@ html[lang="es"] .lang [data-b="es"],html[lang="en"] .lang [data-b="en"]{backgrou
 .item::before{content:"";position:absolute;left:-28px;top:26px;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid var(--noche)}
 .year{display:inline-block;background:var(--noche);color:#fff;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:700;margin-bottom:6px}
 
-/* ===== PROYECTOS / PUBLICACIONES ===== */
+/* ===== PROYECTOS ===== */
 .proj .ico{font-size:2rem;margin-bottom:8px}
-.proj a.more,.pub a{color:var(--noche);font-weight:700}
-.pub{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
-.pub .n{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:var(--beige);color:var(--noche);display:grid;place-items:center;font-weight:800}
+.proj a.more{color:var(--noche);font-weight:700}
 .dashed{border:2px dashed var(--rosa);box-shadow:none;background:transparent;color:var(--noche)}
 
 /* ===== CONTACTO ===== */
@@ -186,6 +184,12 @@ footer{text-align:center;padding:20px;font-size:.85rem;color:var(--noche)}
       <h3 data-l="es">Grado en Biotecnología</h3><h3 data-l="en">Bachelor’s Degree in Biotechnology</h3>
       <p class="meta">Universidad de Castilla-La Mancha (UCLM)</p>
     </div>
+    <div class="item card">
+      <span class="year">2019 – 2021</span>
+      <h3 data-l="es">Bachillerato · Itinerario de Ciencias Puras</h3><h3 data-l="en">Upper Secondary · Pure Sciences track</h3>
+      <p class="meta">La Enseñanza</p>
+    </div>
+  </div>
   <h3 style="margin:30px 0 14px"><span data-l="es">Formación adicional</span><span data-l="en">Additional training</span></h3>
   <div class="grid">
     <!-- AÑADIR CURSO: copia un bloque <div class="card"> -->
@@ -218,6 +222,10 @@ footer{text-align:center;padding:20px;font-size:.85rem;color:var(--noche)}
 </div></section>
 
 <!-- ================= PROYECTOS ================= -->
+<section id="proyectos" class="bg"><div class="wrap">
+  <h2><span data-l="es">Proyectos</span><span data-l="en">Projects</span></h2>
+  <div class="grid">
+
     <!-- ===== PROYECTO 1: TFG ===== -->
     <div class="card proj">
       <div class="ico">🧬</div>
@@ -241,7 +249,6 @@ footer{text-align:center;padding:20px;font-size:.85rem;color:var(--noche)}
       <p data-l="es">Este portfolio web fue desarrollado para ampliar la información de mi currículum y mostrar con mayor detalle mi trayectoria académica y profesional. La plataforma reúne proyectos, competencias y experiencias relevantes en un formato más visual, accesible y dinámico que un CV tradicional.</p>
       <p data-l="en">This web portfolio was created to expand on the information in my CV and showcase my academic and professional background in more detail. It brings together projects, skills and relevant experience in a format that is more visual, accessible and dynamic than a traditional CV.</p>
       <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span></div>
-      <p style="margin-top:12px"><a class="more" href="https://513mariagon-byte.github.io/Portfolio/" target="_blank" rel="noopener"><span data-l="es">Ver proyecto →</span><span data-l="en">View project →</span></a></p>
     </div>
 
     <!-- ===== PROYECTO 3: MÁSTER (próximamente) ===== -->
@@ -252,6 +259,11 @@ footer{text-align:center;padding:20px;font-size:.85rem;color:var(--noche)}
       <p data-l="es">Desarrollo e innovación en alimentos de calidad.</p>
       <p data-l="en">Development and innovation in quality foods.</p>
     </div>
+
+    <!-- AÑADIR PROYECTO: copia uno de los bloques de arriba y edita título, descripción, etiquetas y enlace -->
+  </div>
+</div></section>
+
 <!-- ================= CONTACTO ================= -->
 <section id="contacto" class="contact"><div class="wrap">
   <h2><span data-l="es">Contacto</span><span data-l="en">Contact</span></h2>
