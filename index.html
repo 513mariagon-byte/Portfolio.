@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>María González Martínez · Biotecnóloga</title>
+<meta name="description" content="Portfolio profesional de María González Martínez, biotecnóloga en microbiología y desarrollo de alimentos de calidad.">
+<style>
+/* ============ PALETA (cámbiala aquí) ============ */
+:root{
+  --oscuro:#0A3323;  /* Dark green     · color principal oscuro */
+  --noche:#105666;   /* Midnight green · secundario, textos suaves, etiquetas y enlaces */
+  --rosa:#D3968C;    /* Rosy brown     · acento cálido (botón, nombre, bordes) */
+  --musgo:#839958;   /* Moss green     · detalles decorativos */
+  --beige:#F7F4D5;   /* Beige          · fondos claros */
+  --linea:#E2DFC0;   /* bordes suaves */
+  --texto:#14261e; --blanco:#fff;
+  --radio:18px; --sombra:0 10px 30px rgba(10,51,35,.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--texto);background:var(--blanco);line-height:1.65}
+a{color:inherit;text-decoration:none}
+section{padding:72px 20px}
+.wrap{max-width:1000px;margin:0 auto}
+h2{font-size:clamp(1.6rem,4vw,2.1rem);color:var(--oscuro);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+h2::before{content:"";width:12px;height:34px;border-radius:6px;background:linear-gradient(var(--musgo),var(--rosa))}
+h3{font-size:1.1rem;color:var(--oscuro)}
+
+/* ===== IDIOMA: cada texto lleva data-l="es" o data-l="en" ===== */
+html[lang="es"] [data-l="en"]{display:none!important}
+html[lang="en"] [data-l="es"]{display:none!important}
+
+/* ===== NAV ===== */
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px}
+.logo{font-weight:800;color:var(--oscuro);white-space:nowrap}
+.menu{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.menu::-webkit-scrollbar{display:none}
+.menu a{padding:6px 12px;border-radius:999px;font-size:.9rem;color:var(--noche);white-space:nowrap}
+.menu a:hover{background:var(--beige);color:var(--oscuro)}
+.lang{display:flex;border:2px solid var(--oscuro);border-radius:999px;overflow:hidden;flex-shrink:0}
+.lang button{border:0;background:none;padding:5px 11px;font-weight:700;font-size:.8rem;cursor:pointer;color:var(--oscuro)}
+html[lang="es"] .lang [data-b="es"],html[lang="en"] .lang [data-b="en"]{background:var(--oscuro);color:#fff}
+
+/* ===== HERO ===== */
+.hero{background:radial-gradient(circle at 85% 15%,rgba(211,150,140,.28),transparent 45%),linear-gradient(135deg,var(--oscuro) 35%,var(--noche));color:#fff;padding:80px 20px 90px}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-block;background:rgba(211,150,140,.18);color:var(--rosa);padding:5px 14px;border-radius:999px;font-size:.85rem;margin-bottom:16px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;margin-bottom:14px;font-weight:700;color:var(--rosa)}
+.hero p{max-width:520px;opacity:.93;margin-bottom:26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:999px;font-weight:600;border:2px solid #fff;transition:.2s}
+.btn.main{background:var(--rosa);border-color:var(--rosa);color:var(--oscuro)}
+.btn:hover{transform:translateY(-2px)}
+.photo{position:relative;justify-self:center;width:min(290px,70vw);aspect-ratio:1;border-radius:50%;border:6px solid rgba(211,150,140,.85);background:rgba(255,255,255,.10);display:grid;place-items:center;font-size:4.5rem;font-weight:800;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.30)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* ===== TARJETAS ===== */
+.card{background:#fff;border:1px solid var(--linea);border-radius:var(--radio);padding:24px;box-shadow:var(--sombra)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.bg{background:var(--beige)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:var(--beige);color:var(--oscuro);padding:5px 13px;border-radius:999px;font-size:.88rem;font-weight:600;border:1px solid var(--linea)}
+.bg .chip{background:#fff}
+.meta{color:var(--noche);font-size:.9rem;margin:2px 0 8px}
+
+/* ===== PERFIL ===== */
+.perfil{display:grid;grid-template-columns:1.5fr 1fr;gap:24px}
+.bar{height:10px;background:var(--linea);border-radius:99px;margin:6px 0 16px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--noche),var(--oscuro));border-radius:99px}
+.row{display:flex;justify-content:space-between;font-weight:600;font-size:.95rem}
+
+/* ===== TIMELINE (formación / experiencia) ===== */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--rosa),var(--musgo));border-radius:3px}
+.item{position:relative;margin-bottom:20px}
+.item::before{content:"";position:absolute;left:-28px;top:26px;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid var(--noche)}
+.year{display:inline-block;background:var(--noche);color:#fff;border-radius:999px;padding:2px 12px;font-size:.8rem;font-weight:700;margin-bottom:6px}
+
+/* ===== PROYECTOS / PUBLICACIONES ===== */
+.proj .ico{font-size:2rem;margin-bottom:8px}
+.proj a.more,.pub a{color:var(--noche);font-weight:700}
+.pub{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.pub .n{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:var(--beige);color:var(--noche);display:grid;place-items:center;font-weight:800}
+.dashed{border:2px dashed var(--rosa);box-shadow:none;background:transparent;color:var(--noche)}
+
+/* ===== CONTACTO ===== */
+.contact{background:linear-gradient(135deg,var(--oscuro),var(--noche));color:#fff;text-align:center}
+.contact h2{color:#fff;justify-content:center}.contact h2::before{background:var(--rosa)}
+.contact .btns{justify-content:center;margin-top:20px}
+footer{text-align:center;padding:20px;font-size:.85rem;color:var(--noche)}
+
+/* ===== MÓVIL ===== */
+@media(max-width:760px){
+  .hero .wrap,.perfil{grid-template-columns:1fr}
+  .photo{order:-1;width:200px;font-size:3.2rem}
+  .hero{padding:50px 20px 60px;text-align:center}
+  .hero p{margin-inline:auto}.btns{justify-content:center}
+  section{padding:52px 18px}
+  nav .wrap{flex-wrap:wrap}.menu{order:3;width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVEGACIÓN ================= -->
+<nav><div class="wrap">
+  <a href="#inicio" class="logo">M. González</a>
+  <div class="menu">
+    <a href="#perfil"><span data-l="es">Perfil</span><span data-l="en">Profile</span></a>
+    <a href="#formacion"><span data-l="es">Formación</span><span data-l="en">Education</span></a>
+    <a href="#experiencia"><span data-l="es">Experiencia</span><span data-l="en">Experience</span></a>
+    <a href="#proyectos"><span data-l="es">Proyectos</span><span data-l="en">Projects</span></a>
+    <a href="#publicaciones"><span data-l="es">Publicaciones</span><span data-l="en">Publications</span></a>
+    <a href="#contacto"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+  </div>
+  <div class="lang"><button data-b="es" onclick="setLang('es')">ES</button><button data-b="en" onclick="setLang('en')">EN</button></div>
+</div></nav>
+
+<!-- ================= INICIO ================= -->
+<header class="hero" id="inicio"><div class="wrap">
+  <div>
+    <span class="tag" data-l="es">🧬 Biotecnóloga · Microbiología · I+D alimentario</span>
+    <span class="tag" data-l="en">🧬 Biotechnologist · Microbiology · Food R&amp;D</span>
+    <h1>María González Martínez</h1>
+    <p data-l="es">Interesada en la investigación de la microbiota y el desarrollo de productos probióticos, con atención a la calidad de los ensayos y al registro de resultados.</p>
+    <p data-l="en">Interested in microbiota research and probiotic product development, with a focus on assay quality and accurate recording of results.</p>
+    <div class="btns">
+      <a class="btn main" href="#contacto"><span data-l="es">Contacta conmigo</span><span data-l="en">Get in touch</span></a>
+      <a class="btn" href="https://www.linkedin.com/in/maria-gonzalez-mtz" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <!-- FOTO: guarda tu imagen como foto.jpg en la misma carpeta que este archivo.
+       Si no existe, se muestran las iniciales "MG". -->
+  <div class="photo">MG<img src="foto.jpg" alt="María González Martínez" onerror="this.remove()"></div>
+</div></header>
+
+<!-- ================= PERFIL ================= -->
+<section id="perfil"><div class="wrap">
+  <h2><span data-l="es">Perfil</span><span data-l="en">Profile</span></h2>
+  <div class="perfil">
+    <div class="card">
+      <p data-l="es">Biotecnóloga con experiencia en laboratorio clínico y control de calidad, interesada en la investigación de la microbiota y el desarrollo de productos probióticos. Mi formación en microbiología, PCR y procesamiento de muestras biológicas se complementa con mis prácticas en el Grupo Centro Médico Estación y Tradecorp. Actualmente curso el Máster en Innovación y Desarrollo de Alimentos de Calidad. Uso Python y R para el análisis de datos y busco aportar esta base técnica a proyectos que conecten microbiología, salud y desarrollo de producto.</p>
+      <p data-l="en">Biotechnologist with experience in clinical laboratory and quality control, interested in microbiota research and probiotic product development. My training in microbiology, PCR and biological sample processing is complemented by internships at Grupo Centro Médico Estación and Tradecorp. I am currently studying the Master’s in Innovation and Development of Quality Foods. I use Python and R for data analysis and aim to bring this technical base to projects linking microbiology, health and product development.</p>
+      <h3 style="margin-top:20px"><span data-l="es">Habilidades técnicas</span><span data-l="en">Technical skills</span></h3>
+      <div class="chips">
+        <!-- AÑADIR HABILIDAD: copia una línea y cambia el texto -->
+        <span class="chip">PCR</span><span class="chip">Electroforesis / Gel electrophoresis</span>
+        <span class="chip">Microbiología / Microbiology</span><span class="chip">Técnicas asépticas / Aseptic techniques</span>
+        <span class="chip">Espectrofotometría / Spectrophotometry</span><span class="chip">Python</span><span class="chip">R</span>
+        <span class="chip">MicroHibro</span><span class="chip">ComBase</span><span class="chip">FSSP</span><span class="chip">PMP</span><span class="chip">Microsoft Office</span>
+      </div>
+      <h3 style="margin-top:20px"><span data-l="es">Competencias personales</span><span data-l="en">Soft skills</span></h3>
+      <div class="chips">
+        <span class="chip" data-l="es">Trabajo en equipo</span><span class="chip" data-l="en">Teamwork</span>
+        <span class="chip" data-l="es">Atención al detalle</span><span class="chip" data-l="en">Attention to detail</span>
+        <span class="chip" data-l="es">Comunicación científica</span><span class="chip" data-l="en">Scientific communication</span>
+        <span class="chip" data-l="es">Resolución de problemas</span><span class="chip" data-l="en">Problem solving</span>
+        <span class="chip" data-l="es">Gestión del tiempo</span><span class="chip" data-l="en">Time management</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span data-l="es">Idiomas</span><span data-l="en">Languages</span></h3><br>
+      <div class="row"><span data-l="es">Español</span><span data-l="en">Spanish</span><span data-l="es">Nativo</span><span data-l="en">Native</span></div>
+      <div class="bar"><i style="width:100%"></i></div>
+      <div class="row"><span data-l="es">Inglés</span><span data-l="en">English</span><span>B2</span></div>
+      <div class="bar"><i style="width:80%"></i></div>
+      <p class="meta"><span data-l="es">🚗 Permiso B de conducir</span><span data-l="en">🚗 Full driving licence (B)</span></p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= FORMACIÓN ================= -->
+<section id="formacion" class="bg"><div class="wrap">
+  <h2><span data-l="es">Formación</span><span data-l="en">Education</span></h2>
+  <div class="timeline">
+    <!-- AÑADIR FORMACIÓN: copia un bloque <div class="item card">…</div> completo y pégalo donde quieras -->
+    <div class="item card">
+      <span class="year" data-l="es">2026 – actualidad</span><span class="year" data-l="en">2026 – present</span>
+      <h3 data-l="es">Máster en Innovación y Desarrollo de Alimentos de Calidad</h3>
+      <h3 data-l="en">Master’s in Innovation and Development of Quality Foods</h3>
+      <p class="meta">Universidad de Castilla-La Mancha (UCLM)</p>
+    </div>
+    <div class="item card">
+      <span class="year">2021 – 2026</span>
+      <h3 data-l="es">Grado en Biotecnología</h3><h3 data-l="en">Bachelor’s Degree in Biotechnology</h3>
+      <p class="meta">Universidad de Castilla-La Mancha (UCLM)</p>
+    </div>
+  <h3 style="margin:30px 0 14px"><span data-l="es">Formación adicional</span><span data-l="en">Additional training</span></h3>
+  <div class="grid">
+    <!-- AÑADIR CURSO: copia un bloque <div class="card"> -->
+    <div class="card"><span class="year">2026</span><h3>Code in Place · Stanford</h3></div>
+    <div class="card"><span class="year">2026</span><h3>Biotech Unveiled: U.S. Biomedical Innovation Marketplace and its Global Role</h3></div>
+    <div class="card"><span class="year">2024</span><h3 data-l="es">Curso de Biotecnología de Carotenoides</h3><h3 data-l="en">Carotenoid Biotechnology Course</h3></div>
+  </div>
+</div></section>
+
+<!-- ================= EXPERIENCIA ================= -->
+<section id="experiencia"><div class="wrap">
+  <h2><span data-l="es">Experiencia</span><span data-l="en">Experience</span></h2>
+  <div class="timeline">
+    <!-- AÑADIR EXPERIENCIA: copia un bloque <div class="item card">…</div> -->
+    <div class="item card">
+      <span class="year">2026</span>
+      <h3 data-l="es">Auxiliar de analista de calidad</h3><h3 data-l="en">Quality Analyst Assistant</h3>
+      <p class="meta">Tradecorp</p>
+      <p data-l="es">Control de calidad en entorno industrial: ensayos analíticos, documentación de laboratorio y cumplimiento de los estándares internos de calidad.</p>
+      <p data-l="en">Quality control in an industrial setting: analytical assays, laboratory documentation and compliance with internal quality standards.</p>
+    </div>
+    <div class="item card">
+      <span class="year">2025</span>
+      <h3 data-l="es">Auxiliar de analista de laboratorio</h3><h3 data-l="en">Laboratory Analyst Assistant</h3>
+      <p class="meta">Grupo Centro Médico Estación · Laboratorio Bioclínico Ochando (Alicante)</p>
+      <p data-l="es">Microbiología y PCR, análisis clínico, procesamiento de muestras biológicas y trabajo diagnóstico con control de calidad.</p>
+      <p data-l="en">Microbiology and PCR, clinical analysis, biological sample processing and diagnostic work with quality control.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= PROYECTOS ================= -->
+    <!-- ===== PROYECTO 1: TFG ===== -->
+    <div class="card proj">
+      <div class="ico">🧬</div>
+      <p class="meta"><span data-l="es">2026 · Trabajo Fin de Grado</span><span data-l="en">2026 · Bachelor’s Thesis</span></p>
+      <h3 data-l="es">Terapias génicas en trastornos dermatológicos como la epidermólisis bullosa y la ictiosis</h3>
+      <h3 data-l="en">Gene therapies for dermatological disorders such as epidermolysis bullosa and ichthyosis</h3>
+      <p data-l="es">Mi Trabajo Fin de Grado abordó el potencial de las terapias génicas para el tratamiento de enfermedades dermatológicas hereditarias graves, como la epidermólisis bullosa y la ictiosis, que actualmente carecen de tratamientos curativos efectivos. Mediante una revisión bibliográfica sistemática de la literatura científica de los últimos veinte años, analicé estudios preclínicos y clínicos basados en vectores virales y herramientas de edición genética como CRISPR/Cas9 y TALEN. Los resultados mostraron que estas estrategias permiten restaurar proteínas clave de la piel, mejorando la cicatrización y la estabilidad cutánea, lo que confirma la viabilidad de la terapia génica como alternativa terapéutica prometedora.</p>
+      <p data-l="en">My Bachelor’s Thesis explored the potential of gene therapies for treating severe hereditary dermatological diseases, such as epidermolysis bullosa and ichthyosis, which currently lack effective curative treatments. Through a systematic review of the scientific literature of the last twenty years, I analysed preclinical and clinical studies based on viral vectors and gene-editing tools such as CRISPR/Cas9 and TALEN. The results showed that these strategies can restore key skin proteins, improving wound healing and skin stability, confirming the viability of gene therapy as a promising therapeutic alternative.</p>
+      <div class="chips"><span class="chip">CRISPR/Cas9</span><span class="chip">TALEN</span><span class="chip">Terapia génica / Gene therapy</span></div>
+      <!-- ENLACE (opcional): quita los símbolos de comentario y pon tu enlace
+      <p style="margin-top:12px"><a class="more" href="https://enlace-al-proyecto.com" target="_blank" rel="noopener"><span data-l="es">Ver proyecto →</span><span data-l="en">View project →</span></a></p>
+      -->
+    </div>
+
+    <!-- ===== PROYECTO 2: PORTFOLIO WEB ===== -->
+    <div class="card proj">
+      <div class="ico">🌐</div>
+      <p class="meta"><span data-l="es">2026 · Proyecto personal</span><span data-l="en">2026 · Personal project</span></p>
+      <h3 data-l="es">Creación de portfolio web propio</h3>
+      <h3 data-l="en">Creation of my own web portfolio</h3>
+      <p data-l="es">Este portfolio web fue desarrollado para ampliar la información de mi currículum y mostrar con mayor detalle mi trayectoria académica y profesional. La plataforma reúne proyectos, competencias y experiencias relevantes en un formato más visual, accesible y dinámico que un CV tradicional.</p>
+      <p data-l="en">This web portfolio was created to expand on the information in my CV and showcase my academic and professional background in more detail. It brings together projects, skills and relevant experience in a format that is more visual, accessible and dynamic than a traditional CV.</p>
+      <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span></div>
+      <p style="margin-top:12px"><a class="more" href="https://513mariagon-byte.github.io/Portfolio/" target="_blank" rel="noopener"><span data-l="es">Ver proyecto →</span><span data-l="en">View project →</span></a></p>
+    </div>
+
+    <!-- ===== PROYECTO 3: MÁSTER (próximamente) ===== -->
+    <div class="card proj dashed">
+      <div class="ico">🧫</div>
+      <p class="meta"><span data-l="es">Próximamente</span><span data-l="en">Coming soon</span></p>
+      <h3 data-l="es">Proyecto del máster</h3><h3 data-l="en">Master’s project</h3>
+      <p data-l="es">Desarrollo e innovación en alimentos de calidad.</p>
+      <p data-l="en">Development and innovation in quality foods.</p>
+    </div>
+<!-- ================= CONTACTO ================= -->
+<section id="contacto" class="contact"><div class="wrap">
+  <h2><span data-l="es">Contacto</span><span data-l="en">Contact</span></h2>
+  <p data-l="es">¿Hablamos sobre colaboraciones, prácticas o proyectos de investigación?</p>
+  <p data-l="en">Let’s talk about collaborations, internships or research projects.</p>
+  <div class="btns">
+    <a class="btn main" href="mailto:513mariagon@gmail.com">✉️ 513mariagon@gmail.com</a>
+    <a class="btn" href="tel:+34638484900">📞 638 484 900</a>
+    <a class="btn" href="https://www.linkedin.com/in/maria-gonzalez-mtz" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</div></section>
+
+<footer>© 2026 María González Martínez</footer>
+
+<script>
+/* Cambio de idioma (recuerda la elección) */
+function setLang(l){
+  document.documentElement.lang=l;
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+(function(){
+  var l;try{l=localStorage.getItem('lang')}catch(e){}
+  if(!l)l=(navigator.language||'es').slice(0,2)==='en'?'en':'es';
+  setLang(l);
+})();
+</script>
+</body>
+</html>
